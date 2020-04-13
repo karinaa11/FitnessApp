@@ -1,0 +1,18 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
+    },
+    "cordova-plugin-android-sensor-listeners": {
+      "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
+    }
+  },
+  "dependent_plugins": {}
+}
