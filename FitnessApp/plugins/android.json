@@ -12,6 +12,9 @@
     },
     "cordova-plugin-android-sensor-listeners": {
       "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
     }
   },
   "dependent_plugins": {}
