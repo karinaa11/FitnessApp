@@ -33,45 +33,33 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <title>Fitness app</title>
     </head>
     <body>
-        <div class="app">
-           
-            <div id="deviceready" class="blink">
-                <p class="event listening"></p>
-                <p class="event received"></p>
-            </div>
-            <table>
-                <td>
+        <div class="app2">
+        <h1>USER PROFILE</h1>
+        <p>Please input all required information</p>
+        <form id="form1">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="First Name" required><br>
+            <label for="bday">Birthday:</label><br>
+            <input type="date" id="bday" name="bday" placeholder="MM/DD/YYYY" required><br>
+            <label for="weight">Weight:</label><br>
+            <input type="text" id="weight" name="weight" placeholder="LBS" required><br>
+            <label for="height">Height:</label><br>
+            <input type="text" id="height" name="height" placeholder="INCHES" required><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male  </label><br>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label><br><br>
             
-            
-           
-  <input id="button1" type="button" class ="image0" value=" "/>
-            </td>
-            
-            <td>
-           
-            <input id="button3" type="button" class ="image1" value=" "/>
-           
-            </td>
-            
-            </table>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-             <h1>MyFit App</h1>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
-             <input id="button2" type="button" class ="image2" value=" "/>
-        </div>
+        </form>
+        <input id="button1" type="button" value="Submit" />
+         <input id="homeButton" type="button" value="Home" />
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+        <script type="text/javascript" src="js/userdata.js"></script>
+        </div>
+        </body>
+    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/userdata.js"></script>
 </html>

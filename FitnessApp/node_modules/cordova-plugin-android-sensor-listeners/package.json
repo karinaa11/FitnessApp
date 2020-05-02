@@ -1,25 +1,28 @@
 {
-  "_from": "git+https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git",
+  "_from": "cordova-plugin-android-sensor-listeners",
   "_id": "cordova-plugin-android-sensor-listeners@0.2.0",
   "_inBundle": false,
-  "_integrity": "",
+  "_integrity": "sha512-+LbHX3lWKbQy5YUTgsKGxMcC56DqNv5cIPRbuh6HEob86vIwOhVSbp6TUntrXOCc6ea/wINgaAXIhTafz0JvFQ==",
   "_location": "/cordova-plugin-android-sensor-listeners",
   "_phantomChildren": {},
   "_requested": {
-    "type": "git",
-    "raw": "https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git",
-    "rawSpec": "https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git",
-    "saveSpec": "git+https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git",
-    "fetchSpec": "https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git",
-    "gitCommittish": null
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-android-sensor-listeners",
+    "name": "cordova-plugin-android-sensor-listeners",
+    "escapedName": "cordova-plugin-android-sensor-listeners",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "git+https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git#fc669e4a59cb43b777c1b76a9487ffce6e7562d3",
-  "_spec": "https://github.com/QuentinRoy/cordova-plugin-android-sensor-listeners.git",
-  "_where": "C:\\Users\\ryo36\\Documents\\FitnessApp\\FitnessApp",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-android-sensor-listeners/-/cordova-plugin-android-sensor-listeners-0.2.0.tgz",
+  "_shasum": "a5e9ebaad3e55a0ddd60a5eeb3680a1bcf40be23",
+  "_spec": "cordova-plugin-android-sensor-listeners",
+  "_where": "C:\\Users\\ryo36\\Desktop\\FitnessApp\\FitnessApp",
   "author": {
     "name": "Quentin Roy",
     "email": "quentin@quentinroy.fr"

@@ -1,3 +1,10 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -20,19 +27,18 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-      document.getElementById("button1").addEventListener("click",walk);
-       document.getElementById("button2").addEventListener("click",openpage);
-         document.getElementById("button3").addEventListener("click",run);
-        
+        window.addEventListener('load', b2 , false);
+        document.getElementById("homeButton").addEventListener("click", b3);
+          
     },
 
     // deviceready Event Handler
-    //
+    //document.addEventListener("load", b2);
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        
+         
     },
 
     // Update DOM on a Received Event
@@ -48,28 +54,43 @@ var app = {
     }
 };
 
+app.initialize();
+
+function b2(){
     
+    
+    var a = window.localStorage.getItem('username');
+    var b = window.localStorage.getItem('bday');
+    var c = window.localStorage.getItem('weight');
+    var d = window.localStorage.getItem('height');
+    var currDate = new Date();
+    var birDay = new Date(b);
+    var Yrs = currDate.getFullYear() - birDay.getFullYear();
+    var Dys = currDate.getDay()-birDay.getDay();
+    var Mnth = currDate.getMonth()-birDay.getMonth();
+    var age = Yrs;
+    var BMI=703*(c/(d*d))
+    if ( (currDate.getMonth()+1 < birDay.getMonth()+1) )
+    {
+        age--;
+    }
+    if((birDay.getMonth()+1 === currDate.getMonth()+1) && (currDate.getDay()-2 < birDay.getDay()+2))
+     {
+        age--;
+    } 
+    
+    document.getElementById("nm").innerHTML =a;
+    document.getElementById("age").innerHTML=age;
+    document.getElementById("w").innerHTML = c;
+    document.getElementById("h").innerHTML = d;
+    document.getElementById("bmi").innerHTML = parseFloat(BMI).toFixed(2);
+
+}
+function b3(){
+    
+    var counter = window.localStorage.getItem('counter');
+    
+  window.location.href="index.html";
    
 
-app.initialize();
-function run(){
-    
-    if(window.localStorage.getItem('username')=== null)
-    { alert("Hello! Please fillout your user profile before you get started!");
-        window.location.href="input.html";
-    }else{window.location.href="Gmap.html"}
-
 }
-function walk(){
-      if(window.localStorage.getItem('username')=== null)
-    { alert("Hello! Please fillout your user profile before you get started!");
-        window.location.href="input.html";
-    }else{window.location.href="Gmap.html"}
-}
-function openpage() {
-    
-    
-    
-        window.location.href="input.html";
-        
-    }

@@ -23,8 +23,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-android-sensor-listeners": {},
-      "cordova-plugin-geolocation": {}
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-android-sensor-listeners": {}
     },
     "platforms": [
       "android"

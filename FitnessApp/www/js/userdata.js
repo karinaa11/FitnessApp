@@ -1,3 +1,10 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -20,10 +27,9 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-      document.getElementById("button1").addEventListener("click",walk);
-       document.getElementById("button2").addEventListener("click",openpage);
-         document.getElementById("button3").addEventListener("click",run);
-        
+         document.getElementById("button1").addEventListener("click", b1);
+          document.getElementById("homeButton").addEventListener("click", b3);
+          
     },
 
     // deviceready Event Handler
@@ -32,7 +38,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        
     },
 
     // Update DOM on a Received Event
@@ -48,28 +53,22 @@ var app = {
     }
 };
 
+app.initialize();
+
+function b1(){
     
+    window.localStorage.setItem('username', document.getElementById("name").value);
+     window.localStorage.setItem('bday', document.getElementById("bday").value);
+      window.localStorage.setItem('weight', document.getElementById("weight").value);
+       window.localStorage.setItem('height', document.getElementById("height").value);
+       
+   window.location.href="UserDataDisplay.html";
+
+}
+function b3(){
+    
+    
+  window.location.href="index.html";
    
 
-app.initialize();
-function run(){
-    
-    if(window.localStorage.getItem('username')=== null)
-    { alert("Hello! Please fillout your user profile before you get started!");
-        window.location.href="input.html";
-    }else{window.location.href="Gmap.html"}
-
 }
-function walk(){
-      if(window.localStorage.getItem('username')=== null)
-    { alert("Hello! Please fillout your user profile before you get started!");
-        window.location.href="input.html";
-    }else{window.location.href="Gmap.html"}
-}
-function openpage() {
-    
-    
-    
-        window.location.href="input.html";
-        
-    }
