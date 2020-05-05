@@ -13,7 +13,29 @@
               "count": 1
             },
             {
+              "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
+              "count": 1
+            },
+            {
               "xml": "<feature name=\"Sensors\"><param name=\"android-package\" value=\"fr.quentinroy.plugin.Sensors\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-feature android:name=\"android.hardware.location.gps\" />",
               "count": 1
             }
           ]
@@ -25,12 +47,29 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
     },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
+    },
     "cordova-plugin-android-sensor-listeners": {
       "PACKAGE_NAME": "edu.sxu.mymail.k01.alshair.fitnessapp"
     }
   },
   "dependent_plugins": {},
   "modules": [
+    {
+      "id": "cordova-plugin-geolocation.geolocation",
+      "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "clobbers": [
+        "navigator.geolocation"
+      ]
+    },
+    {
+      "id": "cordova-plugin-geolocation.PositionError",
+      "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+      "pluginId": "cordova-plugin-geolocation",
+      "runs": true
+    },
     {
       "id": "cordova-plugin-android-sensor-listeners.registry",
       "file": "plugins/cordova-plugin-android-sensor-listeners/www/registry.js",
@@ -48,6 +87,7 @@
   ],
   "plugin_metadata": {
     "cordova-plugin-whitelist": "1.3.4",
+    "cordova-plugin-geolocation": "4.0.2",
     "cordova-plugin-android-sensor-listeners": "0.1.0"
   }
 }

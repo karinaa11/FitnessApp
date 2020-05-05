@@ -16,30 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-/* global sensors */
-
 var app = {
     // Application Constructor
-    initialize: function ()
-    {
+    initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+      document.getElementById("button1").addEventListener("click",walk);
+       document.getElementById("button2").addEventListener("click",openpage);
+         document.getElementById("button3").addEventListener("click",run);
+        
     },
 
     // deviceready Event Handler
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
-    onDeviceReady: function ()
-    {
+    onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        //Run the stepCounter and stepDetector when the device opens.
-        stepCounter();
-        stepDetector();
+        
     },
 
     // Update DOM on a Received Event
-    receivedEvent: function (id)
-    {
+    receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -51,80 +48,28 @@ var app = {
     }
 };
 
+    
+   
+
 app.initialize();
-//Global variables to count steps and keep track of the 'trigger value'
-var steps = -1;
-var steps2 = 0;
-var triggerVal;
+function run(){
+    
+    if(window.localStorage.getItem('username')=== null)
+    { alert("Hello! Please fillout your user profile before you get started!");
+        window.location.href="input.html";
+    }else{window.location.href="Gmap.html"}
 
-/**
- * 
- * The stepCounter() function creates, well, a step counter (which is higher latency, higher accuracy)
- * In the 'listener(event)' function, the event parameter is passed and the function is run by the sensor
- * object. The sensor listener is where the magic happens. It takes four parameters: the type of sensor (in this case,
- * the STEP_COUNTER, the speed (NORMAL is fine for our use case), the listener method, and what to do in case of error.
- * The listener function is where our calculations happen, using the event parameter. event.values is an array, making
- * var values an array. For stepCounter(), event.values[0] returns the amount of steps taken since the system booted up.
- *  triggerVal is checked against that number, and if they're not equal, it means either the app has first initialized
- *  (or this particular page has initialized - this can be made to be a separate page from index.html), or that a step
- *  has been taken. triggerVal is then set equal to the amount of steps taken since system start up, and the step 
- *  counter is incremented by 1. There may be a better solution to this, such as initializing triggerVal with the value
- *  immediately and then adding steps based on the difference between the two values, but this works for now.
- */
-function stepCounter()
-{
-    function listener(event)
-    {
-        var values = event.values;
-        if (triggerVal !== values[0])
-        {
-            triggerVal === values[0];
-            steps++;
-        }
-        counterOutput();
+}
+function walk(){
+      if(window.localStorage.getItem('username')=== null)
+    { alert("Hello! Please fillout your user profile before you get started!");
+        window.location.href="input.html";
+    }else{window.location.href="Gmap.html"}
+}
+function openpage() {
+    
+    
+    
+        window.location.href="input.html";
+        
     }
-
-    sensors.addSensorListener("STEP_COUNTER", "NORMAL", listener, function (error)
-    {
-        if (error)
-            alert("Could not listen to sensor");
-    });
-}
-
-/**
- * 
- * Step detector functions in a slightly different manner. Because it is meant to be low-latency with accuracy being 
- * sacrificed (likely better for higher speed), its speed is set to 'FASTEST'. Other than that, event.values is still
- * an array, so values2 is the same array. However, values2[0] is only ever between 0 and 1, inclusive.. If it is 1, a 
- * step was detected. If it is 0, a step was not detected. This basically sets the variable value equal to whatever 
- * values2[0] is, and if it is greater than 0, a step was taken so that step counter variable is incremented.
- */
-function stepDetector()
-{
-    function listener2(event)
-    {
-        var values2 = event.values;
-        var value = -1;
-        if (values2.length > 0)
-            value = values2[0];
-        if (value > 0)
-            steps2++;
-        detectorOutput();
-    }
-
-    sensors.addSensorListener("STEP_DETECTOR", "FASTEST", listener2, function (error)
-    {
-        if (error)
-            alert("Could not listen to sensor");
-    });
-}
-
-//These two functions are simply how to use the step variables. In this case, they are put into a p element for output.
-function counterOutput()
-{
-    document.getElementById("stepCounter").innerHTML = "<p>StepCounter: " + steps + "</p>";
-}
-function detectorOutput()
-{
-    document.getElementById("stepDetector").innerHTML = "<p>StepDetector: " + steps2 + "</p>";
-}

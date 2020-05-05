@@ -39,16 +39,17 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    background:url(../img/Fitness.jpeg) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
+    left:28%;
+    top:20%;
+    height:100%;                   /* text area height */
+    width:100%;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+     font-size: 24 px;
+      /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */
@@ -60,33 +61,86 @@ body {
                                       /* offset horizontal: half of image width and text area width */
     }
 }
-
+.app2 {
+    background:url(../img/Fitness.jpg) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:28%;
+    top:20%;
+    height:100%;                   /* text area height */
+    width:100%;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+     font-size: 24 px;
+      /* offset horizontal: half of text area width */
+      color: white;
+}
 h1 {
-    font-size:24px;
+    font-size:42px;
     font-weight:normal;
-    margin:0px;
-    overflow:visible;
+    
+   
+    overflow: visible;
     padding:0px;
     text-align:center;
+    color: white;
 }
+.image0 {
+    background:url(../img/walkbutton.png) no-repeat ;           /* this was snack4 but I made it smaller  */
+    display:block;
+  height:120px;                   /* image height */
+   width:120px;                      /* image width */
+   margin-left:50px;     /* position in the center of the screen */
+   margin-right:auto;
+    position: relative;
+    
+  padding: 20px 50px;
+
+    border: none;
+    outline:none;
+    
+    
+    }
+.image1 {
+    background:url(../img/Runbutton.png) no-repeat ;           /* this was snack4 but I made it smaller  */
+    display:block;
+  height:120px;                   /* image height */
+   width:120px;                      /* image width */
+   margin-left:50px;     /* position in the center of the screen */
+   margin-right:auto;
+    position: relative;
+    
+  padding: 20px 50px;
+border: none;
+    outline:none;
+    
+    
+    
+    }
+    .image2 {
+    background:url(../img/userinput.png) no-repeat ;           /* this was snack4 but I made it smaller  */
+    display:block;
+  height:28px;                   /* image height */
+   width:195px;                      /* image width */
+   margin-left:100px;     /* position in the center of the screen */
+   margin-right:auto;
+    position: relative;
+    
+  padding: 20px 50px;
+
+    border: none;
+    outline:none;
+    
+    
+    }
 
 .event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
 }
 
 .event.listening {
-    background-color:#333333;
-    display:block;
 }
 
 .event.received {
-    background-color:#4B946A;
-    display:none;
 }
 
 @keyframes fade {
@@ -102,6 +156,4 @@ h1 {
 }
  
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
 }

@@ -16,29 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-/* global sensors */
-
 var app = {
     // Application Constructor
-    initialize: function ()
-    {
+    initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+      document.getElementById("button1").addEventListener("click",walk);
+       document.getElementById("button2").addEventListener("click",openpage);
+         document.getElementById("button3").addEventListener("click",run);
+        
     },
 
     // deviceready Event Handler
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
-    onDeviceReady: function ()
-    {
+    onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        stepCounter();
-        stepDetector();
+        
     },
 
     // Update DOM on a Received Event
-    receivedEvent: function (id)
-    {
+    receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -50,54 +48,28 @@ var app = {
     }
 };
 
+    
+   
+
 app.initialize();
+function run(){
+    
+    if(window.localStorage.getItem('username')=== null)
+    { alert("Hello! Please fillout your user profile before you get started!");
+        window.location.href="input.html";
+    }else{window.location.href="Gmap.html"}
 
-var steps = -1;
-var steps2 = 0;
-var triggerVal;
-function stepCounter()
-{
-    function listener(event)
-    {
-        var values = event.values;
-        if (triggerVal !== values[0])
-        {
-            triggerVal === values[0];
-            steps++;
-        }
-        counterOutput();
+}
+function walk(){
+      if(window.localStorage.getItem('username')=== null)
+    { alert("Hello! Please fillout your user profile before you get started!");
+        window.location.href="input.html";
+    }else{window.location.href="Gmap.html"}
+}
+function openpage() {
+    
+    
+    
+        window.location.href="input.html";
+        
     }
-
-    sensors.addSensorListener("STEP_COUNTER", "NORMAL", listener, function (error)
-    {
-        if (error)
-            alert("Could not listen to sensor");
-    });
-}
-function stepDetector()
-{
-    function listener2(event)
-    {
-        var values2 = event.values;
-        var value = -1;
-        if (values2.length > 0)
-            value = values2[0];
-        if (value > 0)
-            steps2++;
-        detectorOutput();
-    }
-
-    sensors.addSensorListener("STEP_DETECTOR", "FASTEST", listener2, function (error)
-    {
-        if (error)
-            alert("Could not listen to sensor");
-    });
-}
-function counterOutput()
-{
-    document.getElementById("stepCounter").innerHTML = "<p>StepCounter: " + steps + "</p>";
-}
-function detectorOutput()
-{
-    document.getElementById("stepDetector").innerHTML = "<p>StepDetector: " + steps2 + "</p>";
-}

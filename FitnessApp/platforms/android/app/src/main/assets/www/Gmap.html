@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <!-- Stylesheets. -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div id="deviceready" class="blink">
+            <p class="event listening"></p>
+            <p class="event received"></p>
+        </div>
+        <div id="map"></div>
+        <div id="speed"></div>
+
+
+        <a href =" index.html" data-theme="a" rel =" external" 
+           data-ajax="false"> Back to Menu </a>
+        <div id="stepCounter"></div>
+        <div id="stepDetector"></div>
+        <!-- Google Maps scripts. -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLmFVyIY50bVLftfRPRyvHVfa7_A-ndec&callback=createMap&libraries=places" async defer></script>
+        <script type="text/javascript" src="js/stepcounter.js"></script>
+    </body>
+</html>
